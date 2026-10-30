@@ -20,12 +20,12 @@ export function MarketingHero({ language, onLanguageChange }: MarketingHeroProps
       className="relative flex items-center justify-center overflow-hidden bg-teal-50 px-6 py-8 sm:px-10 sm:py-12 lg:px-12 lg:py-8 xl:px-16"
     >
       <div
-        className="pointer-events-none absolute -end-24 -top-24 size-80 rounded-full bg-teal-100/70 sm:size-96"
+        className="pointer-events-none absolute -inset-e-24 -top-24 size-80 rounded-full bg-teal-100/70 sm:size-96"
         aria-hidden="true"
       />
 
       <div
-        className="pointer-events-none absolute -bottom-32 -start-32 size-96 rounded-full bg-cyan-100/50"
+        className="pointer-events-none absolute -bottom-32 -inset-s-32 size-96 rounded-full bg-cyan-100/50"
         aria-hidden="true"
       />
 

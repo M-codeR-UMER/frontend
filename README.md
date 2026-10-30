@@ -15,11 +15,11 @@ React Router v8 (Framework Mode) + TypeScript + Tailwind CSS v4 + @base-ui/react
 ```
 app/
 ├── api/
-│   └── generated/client.ts      # Auto-generated OpenAPI types
+│   └── generated/client.ts          # Auto-generated OpenAPI types
 ├── components/
-│   ├── auth/protected-route.tsx # Route guards (DoctorOnly, PatientOnly, PublicOnly)
+│   ├── auth/protected-route.tsx     # Route guards (DoctorOnly, PatientOnly, PublicOnly)
 │   ├── marketing/hero-section.tsx
-│   └── ui/                      # Reusable UI components
+│   └── ui/                          # Reusable UI components
 │       ├── button.tsx
 │       ├── input.tsx
 │       ├── label.tsx
@@ -28,23 +28,28 @@ app/
 │       ├── language-switcher.tsx
 │       └── labeled-input.tsx
 ├── lib/
-│   ├── api/client.ts            # Axios API client (singleton)
+│   ├── api/
+│   │   ├── client.ts                # Axios API client (singleton)
+│   │   └── types.ts                 # Shared API types
 │   ├── auth/
-│   │   ├── context.tsx          # AuthContext + AuthProvider
-│   │   └── hooks.ts             # useAuth hook
-│   ├── i18n/translations.ts     # EN/UR translations
+│   │   ├── context.tsx              # AuthContext + AuthProvider
+│   │   └── hooks.ts                 # useAuth hook
+│   ├── i18n/translations.ts         # EN/UR translations
 │   └── utils.ts
 └── routes/
-    ├── login.tsx                # Doctor login (/) 
-    ├── signup.tsx               # Doctor registration (/signup)
-    ├── doctor/
-    │   ├── layout.tsx           # Protected doctor layout
-    │   └── dashboard.tsx        # Doctor dashboard
-    └── patient/
-        ├── layout.tsx           # Protected patient layout
-        ├── login.tsx            # Patient login
-        ├── signup.tsx           # Patient registration
-        └── dashboard.tsx        # Patient dashboard
+    ├── _auth/                       # Public auth routes (no layout)
+    │   ├── login/route.tsx          # Doctor login (/)
+    │   ├── signup/route.tsx         # Doctor registration (/signup)
+    │   ├── patient-login/route.tsx  # Patient login (/patient/login)
+    │   └── patient-signup/route.tsx # Patient registration (/patient/signup)
+    ├── _app/                        # Protected app routes (with layouts)
+    │   ├── doctor/
+    │   │   ├── layout.tsx           # Protected doctor layout
+    │   │   └── route.tsx            # Doctor dashboard (/doctor/dashboard)
+    │   └── patient/
+    │       ├── layout.tsx           # Protected patient layout
+    │       └── route.tsx            # Patient dashboard (/patient/dashboard)
+    └── routes.ts                    # Route configuration
 ```
 
 ## Routes
